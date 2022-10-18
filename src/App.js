@@ -1,24 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react'
+import ReactMarkdown from 'react-markdown'
 
 function App() {
+
+  const [markdown, setMarkdown] = useState('## markdown')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <section>
+        <textarea cols="100" rows="10" value={markdown} onChange={(e)=>{
+          setMarkdown(e.target.value)
+        }}>
+
+        </textarea>
+      </section>
+      <section className='markdown'>
+          <h1>Markdown Preview:</h1>
+          <ReactMarkdown>{markdown}</ReactMarkdown>
+      </section>
+    </main>
   );
 }
 

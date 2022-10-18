@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 72rem;
+    margin: 16px auto;
+} 
+
+textarea{
+  width: 95%;
+  height: 100vh;
+  font-size:1.3rem ;
+}
+
+.markdown{
+  word-wrap: break-word;
+  white-space: nowrap;
+}
